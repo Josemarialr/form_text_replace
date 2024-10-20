@@ -1,0 +1,19 @@
+<script>
+var palabra=new Array();
+palabra["_"]=" "; // reemplaza _ por un espacio
+palabra["hola"]="adios "; // reemplaza hola por adios
+
+function reemplazar(){
+txt=document.forms[0]['caja'].value;
+for(cual in palabra){
+x=new RegExp(cual,"ig");//para que distinga entre mayuscula y minuscula reemplazar "ig" por "g"
+txt=txt.replace(x,palabra[cual])
+}
+document.forms[0]['caja'].value=txt;
+}
+</script>
+
+<form>
+<textarea cols="50" rows="10" name="caja"></textarea>
+<input type="button" value="Reemplazar" onclick="reemplazar()">
+</form>
